@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+ 
+        input[type="submit"], .home-button {
+            background-color: white;
+            color: black;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .home-button {
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feedback Page</h1>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+   
+            <label for="comments">Comments/Feedback:</label>
+            <textarea id="comments" name="comments" rows="4" required></textarea>
+            
+            <input type="submit" value="Submit">
+        </form>
+        <a href="index.html" class="home-button">Go Home</a>
+    </div>
+</body>
+</html>

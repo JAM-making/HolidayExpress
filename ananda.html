@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananda in the Himalayas</title>
+    <link rel="stylesheet" href="aboutus.css"> <!-- Link to CSS file -->
+    <style>
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slides img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+        .buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ananda In The Himalayas, India</h1>
+    <h4>Stress-Free Planning: We handle all the details so you can focus on rejuvenating your mind and body.</h4>
+    <div class="container">
+        <div class="slides">
+            <img src="ananda.png" alt=""> <!-- Add an image -->
+            <img src="ananda2.png" alt=""> <!-- Add an image -->
+            <img src="ananda3.png" alt=""> <!-- Add an image -->
+        </div>
+        <div class="buttons">
+            <button id="prev">❮</button>
+            <button id="next">❯</button>
+        </div>
+    </div>
+    <p>
+        Nestled in the serene foothills of the Himalayas, Ananda offers a tranquil escape from the holiday chaos. The breathtaking views of the Ganges River and lush landscapes create a perfect backdrop for meditation and relaxation. The luxurious spa treatments, personalized yoga sessions, and holistic wellness programs ensure that every guest leaves feeling rejuvenated and at peace.
+        During the holidays, Ananda’s peaceful environment provides a much-needed break from the hustle and bustle. The crisp mountain air and serene surroundings allow you to reconnect with nature and yourself. Whether you’re meditating in the gardens or enjoying a quiet moment by the river, Ananda offers a sanctuary of calm and tranquility.
+    </p>
+    <p>Go <a href="C:\Users\toriy\Downloads\HTMLwwek5\ExpressHolidays\index.html">Home</a></p> <!-- Add a link -->
+    <script>
+        const slides = document.querySelector('.slides');
+        const images = document.querySelectorAll('.slides img');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let index = 0;
+
+        function showSlide(index) {
+            const width = images[0].clientWidth;
+            slides.style.transform = `translateX(${-index * width}px)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            index = (index > 0) ? index - 1 : images.length - 1;
+            showSlide(index);
+        });
+
+        nextButton.addEventListener('click', () => {
+            index = (index < images.length - 1) ? index + 1 : 0;
+            showSlide(index);
+        });
+
+        window.addEventListener('resize', () => showSlide(index));
+    </script>
+</body>
+</html>
